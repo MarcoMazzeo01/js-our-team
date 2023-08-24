@@ -1,3 +1,4 @@
+// ! MILESTONE 0: crea oggetto con le informazioni dei membri
 const team = {
     member1 : {
         name: "Wayne Barnett",
@@ -34,8 +35,15 @@ const team = {
         role: "Graphic Designer",
         img: "./img/barbara-ramos-graphic-designer.jpg"
     },
-
-
 }
 
+
+// ! MILESTONE 1: Stampare per ogni membro del team le informazioni di nome, ruolo e la stringa della foto
 console.log(team)
+
+for (let person in team) {
+    let member = team[person]
+    console.log(member.name)
+    console.log(member.role)
+    console.log(member.img)
+}
