@@ -3,37 +3,37 @@ const team = {
     member1 : {
         name: "Wayne Barnett",
         role: "Founder & CEO",
-        img: "./img/wayne-barnett-founder-ceo.jpg"
+        img: "wayne-barnett-founder-ceo.jpg"
     },
 
     member2 : {
         name: "Angela Caroll",
         role: "Chief Editor",
-        img: "./img/angela-caroll-chief-editor.jpg"
+        img: "angela-caroll-chief-editor.jpg"
     },
 
     member3 : {
         name: "Walter Gordon",
         role: "Office Manager",
-        img: "./img/walter-gordon-office-manager.jpg"
+        img: "walter-gordon-office-manager.jpg"
     },
 
     member4 : {
         name: "Angela Lopez",
         role: "Social Media Manager",
-        img: "./img/angela-lopez-social-media-manager.jpg"
+        img: "angela-lopez-social-media-manager.jpg"
     },
 
     member5 : {
         name: "Scott Estrada",
         role: "Developer",
-        img: "./img/scott-estrada-developer.jpg"
+        img: "scott-estrada-developer.jpg"
     },
 
     member6 : {
         name: "Barbara Ramos",
         role: "Graphic Designer",
-        img: "./img/barbara-ramos-graphic-designer.jpg"
+        img: "barbara-ramos-graphic-designer.jpg"
     },
 }
 
@@ -48,13 +48,13 @@ function renderString(member) {
     <b>Foto:</b> <img src="${member.img}" alt="${member.name}, ${member.role}"> <hr>`
     paragraph.innerHTML = `<b>Nome:</b> ${member.name} |
      <b>Ruolo:</b> ${member.role} |
-      <b>Foto:</b> <img src="${member.img}" alt="${member.name}, ${member.role}"> <hr>`
+      <b>Foto:</b> <img src="./img/${member.img}" alt="${member.name}, ${member.role}"> <hr>`
     container_m2.append(paragraph)
 }
 
 function renderCard(member) {
     let card = card_template.cloneNode(true)
-    card.querySelector(".card-img-top").setAttribute("src",member.img)
+    card.querySelector(".card-img-top").setAttribute("src","./img/"+member.img)
     card.querySelector(".card-title").innerHTML = member.name
     card.querySelector(".card-subtitle").innerHTML = member.role
     card.classList.remove("d-none")
