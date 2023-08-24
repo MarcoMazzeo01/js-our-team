@@ -45,7 +45,7 @@ function renderString(member) {
     let paragraph = document.createElement("p")
     paragraph.innerHTML = `<b>Nome:</b> ${member.name} | 
     <b>Ruolo:</b> ${member.role} | 
-    <b>Foto:</b> <img src="${member.img}" alt="${member.name}, ${member.role}"> <hr>`
+    <b>Foto:</b> <img src="./img/${member.img}" alt="${member.name}, ${member.role}"> <hr>`
     paragraph.innerHTML = `<b>Nome:</b> ${member.name} |
      <b>Ruolo:</b> ${member.role} |
       <b>Foto:</b> <img src="./img/${member.img}" alt="${member.name}, ${member.role}"> <hr>`
