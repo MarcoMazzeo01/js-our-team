@@ -39,7 +39,28 @@ const team = {
 
 let container_m2 = document.getElementById("milestone2")
 let card_template = document.querySelector(".card")
-console.log(card_template)
+
+
+function renderString(member) {
+    let paragraph = document.createElement("p")
+    paragraph.innerHTML = `<b>Nome:</b> ${member.name} | 
+    <b>Ruolo:</b> ${member.role} | 
+    <b>Foto:</b> <img src="${member.img}" alt="${member.name}, ${member.role}"> <hr>`
+    paragraph.innerHTML = `<b>Nome:</b> ${member.name} |
+     <b>Ruolo:</b> ${member.role} |
+      <b>Foto:</b> <img src="${member.img}" alt="${member.name}, ${member.role}"> <hr>`
+    container_m2.append(paragraph)
+}
+
+function renderCard(member) {
+    let card = card_template.cloneNode(true)
+    card.querySelector(".card-img-top").setAttribute("src",member.img)
+    card.querySelector(".card-title").innerHTML = member.name
+    card.querySelector(".card-subtitle").innerHTML = member.role
+    card.classList.remove("d-none")
+    container_m2.append(card)
+}
+
 
 // ! MILESTONE 1: Stampare per ogni membro del team le informazioni di nome, ruolo e la stringa della foto
 console.log(team)
@@ -51,20 +72,8 @@ for (let person in team) {
     console.log(member.img)
 
     // ! MILESTONE 2: Stampare le stesse informazioni su DOM sottoforma di stringhe
-    let paragraph = document.createElement("p")
-    paragraph.innerHTML = `<b>Nome:</b> ${member.name} | 
-    <b>Ruolo:</b> ${member.role} | 
-    <b>Foto:</b> <img src="${member.img}" alt="${member.name}, ${member.role}"> <hr>`
-    paragraph.innerHTML = `<b>Nome:</b> ${member.name} |
-     <b>Ruolo:</b> ${member.role} |
-      <b>Foto:</b> <img src="${member.img}" alt="${member.name}, ${member.role}"> <hr>`
-    container_m2.append(paragraph)
+    renderString(member)
 
     // ! BONUS 2: Organizzare i singoli membri in card/schede
-    let card = card_template.cloneNode(true)
-    card.querySelector(".card-img-top").setAttribute("src",member.img)
-    card.querySelector(".card-title").innerHTML = member.name
-    card.querySelector(".card-subtitle").innerHTML = member.role
-    card.classList.remove("d-none")
-    container_m2.append(card)
+    renderCard(member)
 }
