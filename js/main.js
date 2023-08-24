@@ -38,6 +38,9 @@ const team = {
 }
 
 
+const container_m2 = document.getElementById("milestone2") 
+
+
 // ! MILESTONE 1: Stampare per ogni membro del team le informazioni di nome, ruolo e la stringa della foto
 console.log(team)
 
@@ -46,4 +49,13 @@ for (let person in team) {
     console.log(member.name)
     console.log(member.role)
     console.log(member.img)
+
+    // ! MILESTONE 2: Stampare le stesse informazioni su DOM sottoforma di stringhe
+    let paragraph = document.createElement("p")
+    paragraph.innerHTML = `<b>Nome:</b> ${member.name} | <b>Ruolo:</b> ${member.role} | <b>Foto:</b> ${member.img} <hr>`
+    container_m2.append(paragraph)
+
 }
+
+
+
