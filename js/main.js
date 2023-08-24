@@ -37,9 +37,7 @@ const team = {
     },
 }
 
-
-const container_m2 = document.getElementById("milestone2") 
-
+let container_m2 = document.getElementById("milestone2")
 
 // ! MILESTONE 1: Stampare per ogni membro del team le informazioni di nome, ruolo e la stringa della foto
 console.log(team)
@@ -55,9 +53,10 @@ for (let person in team) {
     paragraph.innerHTML = `<b>Nome:</b> ${member.name} | 
     <b>Ruolo:</b> ${member.role} | 
     <b>Foto:</b> <img src="${member.img}" alt="${member.name}, ${member.role}"> <hr>`
+    paragraph.innerHTML = `<b>Nome:</b> ${member.name} |
+     <b>Ruolo:</b> ${member.role} |
+      <b>Foto:</b> <img src="${member.img}" alt="${member.name}, ${member.role}"> <hr>`
+
     container_m2.append(paragraph)
 
 }
-
-
-
